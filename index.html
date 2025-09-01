@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma aplicação web para visualizar e comparar algoritmos de ordenação, como Bubble Sort, Insertion Sort, Merge Sort, Quick Sort e Heap Sort.">
+    <meta name="author" content="Thiago Pessoa Araujo">
+    <title>Algoritmos e Técnicas de Ordenação</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Algoritmos e Técnicas de Ordenação</h1>
+    </header>
+    <main role="main">
+        <div class="controls" role="group" aria-label="Controles da aplicação de visualização de algoritmos de ordenação">
+            <div class="controls__group">
+                <label for="algorithm-select">Algoritmo:</label>
+                <select id="algorithm-select" name="algorithm-select" aria-describedby="algorithm-description">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                    <option value="heapSort">Heap Sort</option>
+                </select>
+            </div>
+            <div class="controls__group">
+                <label for="array-size-input">Tamanho do Array:</label>
+                <input
+                    type="range"
+                    id="array-size-input"
+                    min="10"
+                    max="50"
+                    value="30"
+                    role="slider"
+                    aria-valuemin="10"
+                    aria-valuemax="50"
+                    aria-valuenow="30"
+                    aria-valuetext="Tamanho do array: 30"
+                >
+                <span id="array-size-value">30</span>
+            </div>
+            <div class="controls__group">
+                <label for="speed-input">Velocidade:</label>
+                <input
+                    type="range"
+                    id="speed-input"
+                    min="1"
+                    max="100"
+                    value="50"
+                    role="slider"
+                    aria-valuemin="1"
+                    aria-valuemax="100"
+                    aria-valuenow="50"
+                    aria-valuetext="Velocidade de ordenação: 50"
+                >
+                <span id="speed-value">50</span>
+            </div>
+            <div class="controls__group controls__group--buttons">
+                <button id="generate-array-btn">Gerar Novo Array</button>
+                <button id="start-sort-btn">Iniciar Ordenação</button>
+            </div>
+        </div>
+        <div id="visualization-container" role="presentation" aria-label="Visualização do array de barras"></div>
+        <div class="info-panel">
+            <div class="info-group">
+                <h4>Estatísticas:</h4>
+                <p>Comparações: <span id="comparisons-count">0</span></p>
+                <p>Trocas: <span id="swaps-count">0</span></p>
+                <p>Tempo: <span id="time-elapsed">0</span> ms</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Thiago Pessoa Araujo. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
